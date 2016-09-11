@@ -25,7 +25,48 @@ class HotelReservation
   end
 end
 
+# DRIVER CODE:
 
+puts "Testing the ability to change a room number..."
+hotel = HotelReservation.new({customer_name: "joy", date: "08/09/2016", room_number: "215", amenities: []})
+
+hotel = HotelReservation.new({customer_name: "joy", date: "08/09/2016", room_number: "212", amenities: []})
+
+if hotel.room_number == "212"
+  puts "PASS!"
+else
+  puts "FAIL!"
+end
+
+puts "-" * 20
+puts "Testing add_a_fridge method...."
+hotel.add_a_fridge
+
+if hotel.amenities.include?("fridge")
+  puts "PASS!"
+else
+  puts "FAIL!"
+end
+
+puts "-" * 20
+puts "Testing add_a_crib method...."
+hotel.add_a_crib
+
+if hotel.amenities.include?("crib")
+  puts "PASS!"
+else
+  puts "FAIL!"
+end
+
+puts "-" * 20
+puts "Testing add_a_custom_amenity...."
+hotel.add_a_custom_amenity("fresh flowers")
+
+if hotel.amenities.include?("fresh flowers")
+  puts "PASS!"
+else
+  puts "FAIL!"
+end
 # Write your own driver code below! Make sure your code tests the following:
 # The ability to change a room number even after a reservation has already been created
 # The add_a_fridge method
