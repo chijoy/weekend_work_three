@@ -3,8 +3,23 @@
 # the first string, and false otherwise.
 
 def mutation?(base_word, mutation)
+  
+  mutation_array = []
 
+  mutation.each_char do |letter|
+    if base_word.include?(letter)
+      mutation_array << letter
+    end
+  end
+  
+  if mutation_array == mutation.chars
+    true
+  else
+    false
+  end
 end
+
+# result = mutation?("burly", "ruby")
 
 # Driver code - don't touch anything below this line.
 puts "TESTING mutation?..."
