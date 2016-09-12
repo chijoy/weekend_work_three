@@ -3,7 +3,24 @@
 # numbers, inclusive.
 
 def sum_of_range(array)
+  full_array = []
 
+  counter = 0
+
+  sorted_array = array.sort!
+  sorted_array.each do |number|
+    until counter == sorted_array.last
+      counter += 1
+      full_array << counter
+    end
+  end
+
+  sum = 0
+
+  full_array.each do |number|
+    sum += number
+  end
+  sum
 end
 
 # Driver code - don't touch anything below this line.
